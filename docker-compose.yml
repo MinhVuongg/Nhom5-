@@ -1,0 +1,14 @@
+version: "3"
+services:
+  tqs_server:
+    image: node:14.17.5
+    container_name: tqs_server_ctn
+    working_dir: /server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server/:/server/:z
+    command: tail -f /dev/null
+    # command: nodemon --legacy-watch
+    # tty: true
+    # restart: always
